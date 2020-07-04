@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+IMAGE_NAME=mysql2-lambda
+
+docker run \
+  --interactive \
+  --tty \
+  --rm \
+  --volume "${PWD}:/var/task" \
+  $IMAGE_NAME:latest \
+  bash

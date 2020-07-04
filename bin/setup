@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+export IMAGE_NAME=mysql2-lambda
+export MYSQL_VERSION=${MYSQL_VERSION:=0.5.3}
+
+docker pull lambci/lambda:build-ruby2.5
+
+docker build \
+  --no-cache \
+  --build-arg MYSQL_VERSION=${MYSQL_VERSION} \
+  --tag $IMAGE_NAME \
+  .
