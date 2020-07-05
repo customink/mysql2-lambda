@@ -17,7 +17,9 @@ docker run \
 rm -rf ./gem && mkdir ./gem
 cp -r ./share/* ./gem
 cp ./README.md ./gem
+cp ./CHANGELOG.md ./gem
 cp ./mysql2-lambda.gemspec ./gem
+cp ./lib/mysql2-lambda.rb ./gem/lib
 
 pushd ./gem
 
