@@ -25,7 +25,7 @@ RUN curl -L https://downloads.mysql.com/archives/get/p/19/file/mysql-connector-c
     make && \
     make install
 
-RUN echo '== Install MySQL2 Gem =='
+RUN echo '== Install Mysql2 Gem =='
 RUN rm -rf /usr/local/mysql/lib/libmysqlclient.so* && \
     gem install mysql2 \
       -v $MYSQL_VERSION \
