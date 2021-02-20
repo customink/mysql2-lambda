@@ -1,4 +1,6 @@
 
+[![Test](https://github.com/customink/mysql2-lambda/actions/workflows/test.yml/badge.svg)](https://github.com/customink/mysql2-lambda/actions/workflows/test.yml)
+
 # Mysql2 Lambda Gem
 
 <a href="https://github.com/customink/lamby"><img src="https://user-images.githubusercontent.com/2381/59363668-89edeb80-8d03-11e9-9985-2ce14361b7e3.png" alt="Lamby: Simple Rails & AWS Lambda Integration using Rack." align="right" width="300" /></a>Very simple [Mysql2](https://github.com/brianmario/mysql2) gem precompiled for Amazon Linux 1 & 2 (Ruby 2.5 & 2.7) with statically linked `libmysqlclient` ready for any AWS Lambda usage, including Rails.

@@ -1,7 +1,7 @@
-name: CI/CD
+name: Test
 on: [push]
 jobs:
-  cicd:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,7 +12,12 @@ jobs:
       - name: Setup
         run: |
           ./bin/setup
-      - name: Test
+      - name: Build
+        run: |
+          ./bin/build
+      - name: Test 2.5
         run: |
           ./bin/test 2.5
+      - name: Test 2.7
+        run: |
           ./bin/test 2.7
