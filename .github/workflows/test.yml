@@ -1,0 +1,23 @@
+name: Test
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Bootstrap
+        run: |
+          ./bin/bootstrap
+      - name: Setup
+        run: |
+          ./bin/setup
+      - name: Build
+        run: |
+          ./bin/build
+      - name: Test 2.5
+        run: |
+          ./bin/test 2.5
+      - name: Test 2.7
+        run: |
+          ./bin/test 2.7

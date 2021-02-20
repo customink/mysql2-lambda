@@ -1,3 +1,6 @@
+
+[![Test](https://github.com/customink/mysql2-lambda/actions/workflows/test.yml/badge.svg)](https://github.com/customink/mysql2-lambda/actions/workflows/test.yml)
+
 # Mysql2 Lambda Gem
 
 <a href="https://github.com/customink/lamby"><img src="https://user-images.githubusercontent.com/2381/59363668-89edeb80-8d03-11e9-9985-2ce14361b7e3.png" alt="Lamby: Simple Rails & AWS Lambda Integration using Rack." align="right" width="300" /></a>Very simple [Mysql2](https://github.com/brianmario/mysql2) gem precompiled for Amazon Linux 1 & 2 (Ruby 2.5 & 2.7) with statically linked `libmysqlclient` ready for any AWS Lambda usage, including Rails.
@@ -14,7 +17,7 @@ Part of a suite of open source projects from **[Lamby: Simple Rails & AWS Lambda
 
 ## Methodology
 
-We used the `lambci/lambda:build-ruby2.5` Docker image from the [docker-lambda](https://github.com/lambci/docker-lambda) project to build the MySQL Connector/C's `libmysqlclient`. From there we ensure the Mysql2 gem statically includes that library. The resulting packaged gem and `mysql2.so` file looks something like this.
+We used the `amazon/aws-sam-cli-build-image-ruby2.5` Docker image from the [SAM CLI](https://github.com/aws/aws-sam-cli) project to build the MySQL Connector/C's `libmysqlclient`. From there we ensure the Mysql2 gem statically includes that library. The resulting packaged gem and `mysql2.so` file looks something like this.
 
 ```shell
 $ ldd mysql2.so
@@ -41,7 +44,12 @@ Clone or fork this repository, make sure you have Docker installed, then run the
 ./bin/build
 ```
 
-You will now have a packaged gem in the root of your project.
+You will now have a packaged gem in the root of your project. Simple tests to make sure it works.
+
+```shell
+./bin/test 2.5
+./bin/test 2.7
+```
 
 ## License
 

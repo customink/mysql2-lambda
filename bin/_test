@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+MYSQL_VERSION=$(cat VERSION)
+MYSQL_BUILD_VERSION=$(cat BUILD)
+MYSQL_GEM_VERSION="${MYSQL_VERSION}.${MYSQL_BUILD_VERSION}"
+MYSQL_GEM_FILE="mysql2-lambda-${MYSQL_GEM_VERSION}.gem"
+
+echo "Installing ${MYSQL_GEM_FILE} file..."
+gem install --local "$MYSQL_GEM_FILE"
+
+sleep 10
+ruby ./bin/_test-mysql2.rb

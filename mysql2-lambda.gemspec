@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'mysql2-lambda'
-  s.version = '0.5.3.0'
+  s.version = "#{File.read('VERSION').strip}.#{File.read('BUILD').strip}"
   s.authors = ['Ken Collins']
   s.license = "MIT"
   s.email = ['kcollins@customink.com']
