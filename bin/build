@@ -1,9 +1,7 @@
 #!/bin/bash
-
 set -e
 
-export IMAGE_NAME=mysql2-lambda
-export MYSQL_VERSION=${MYSQL_VERSION:=0.5.3}
+IMAGE_NAME=mysql2-lambda
 
 rm -rf ./share
 mkdir ./share
@@ -15,9 +13,12 @@ docker run \
   sh -c "cp -r /build/share/* /share"
 
 rm -rf ./gem && mkdir ./gem
+rm -rf */.gem
 cp -r ./share/* ./gem
 cp ./README.md ./gem
 cp ./CHANGELOG.md ./gem
+cp ./VERSION ./gem
+cp ./BUILD ./gem
 cp ./mysql2-lambda.gemspec ./gem
 cp ./lib/mysql2-lambda.rb ./gem/lib
 

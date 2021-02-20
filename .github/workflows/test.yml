@@ -1,0 +1,18 @@
+name: CI/CD
+on: [push]
+jobs:
+  cicd:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Bootstrap
+        run: |
+          ./bin/bootstrap
+      - name: Setup
+        run: |
+          ./bin/setup
+      - name: Test
+        run: |
+          ./bin/test 2.5
+          ./bin/test 2.7

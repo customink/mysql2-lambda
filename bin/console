@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+IMAGE_NAME=mysql2-lambda
+
+docker run \
+  --interactive \
+  --tty \
+  --rm \
+  --entrypoint "/bin/bash" \
+  $IMAGE_NAME

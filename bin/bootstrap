@@ -1,5 +1,4 @@
 #!/bin/bash
-
 set -e
 
 docker -v $1 &> /dev/null
