@@ -1,3 +1,5 @@
+⚠️ Given Lambda Containers are a thing now... and coupled with the fact that there are no AWS provided Amazon Linux 2 / Lambda containers higher than Ruby 2.7, I'd like to consider this project deprecated in favor of using custom images with the RIC installed. This is really easy to do and I outlined it here for those curious. https://github.com/customink/lamby-cookiecutter/pull/21
+
 
 [![Test](https://github.com/customink/mysql2-lambda/actions/workflows/test.yml/badge.svg)](https://github.com/customink/mysql2-lambda/actions/workflows/test.yml)
 
